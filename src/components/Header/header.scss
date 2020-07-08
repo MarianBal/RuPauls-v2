@@ -1,0 +1,60 @@
+@import './../../resources/colors.scss';
+@import './../../resources/mixin.scss';
+
+nav {
+  width: 100%;
+  height: 66px;
+  background-image: url('./../../img/flag.jpg');
+  background-repeat: repeat-x;
+  background-size: 5%;
+  margin: 0;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0px;
+  z-index: 1;
+  // -webkit-box-shadow: 0px 1px 5px 0px $shadow_color;
+  // -moz-box-shadow: 0px 1px 5px 0px $shadow_color;
+  // box-shadow: 0px 1px 5px 0px $shadow_color;
+  @include flexbox(row, center, center);
+
+  input {
+    width: 38%;
+    height: 30px;
+    background-color: $light_color;
+    color: $dark_color;
+    border: none;
+    text-transform: uppercase;
+    font-size: 14px;
+    padding-left: 10px;
+  }
+
+  .logo {
+    width: 26%;
+    position: fixed;
+    top: 25px;
+    left: 25px;
+
+    img {
+      width: 100%;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  nav {
+    height: 32px;
+
+    input {
+      width: 50%;
+      height: 25px;
+      font-size: 12px;
+      padding-left: 5px;
+    }
+
+    .logo {
+      width: 22%;
+      top: 15px;
+      left: 10px;
+    }
+  }
+}

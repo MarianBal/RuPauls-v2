@@ -1,10 +1,12 @@
 import React from 'react';
 
+import { classNames } from './../../constants/classnames';
+import Header from './../Header';
 import './mainapp.scss';
 
 const MainappView = () => (
-  <div className="main-background">
-    <h1>Hola</h1>;
+  <div className={classNames.mainapp.mainBackground}>
+    <Header />;
   </div>
 );
 export default MainappView;
