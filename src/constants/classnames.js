@@ -4,5 +4,13 @@ export const classNames = {
   },
   header: {
     logo: 'logo'
+  },
+  content: {
+    contentBackground: 'content-background',
+    buttonGroup: 'button-group',
+    eachSeason: 'each-season',
+    contentTitle: 'content-title',
+    contentSubtitle: 'content-subtitle',
+    queens: 'queens'
   }
 };

@@ -1,0 +1,139 @@
+@import './../../resources/colors.scss';
+@import './../../resources/mixin.scss';
+
+.content-background {
+  width: 80%;
+  padding-top: 20px;
+  background-color: $light_color;
+  -webkit-box-shadow: 2px 0px 5px 0px $shadow_color;
+  -moz-box-shadow: 2px 0px 5px 0px $shadow_color;
+  box-shadow: 2px 0px 5px 0px $shadow_color;
+  margin: 0 auto;
+
+  .button-group {
+    width: 100%;
+    height: 50px;
+    @include flexbox(row, center, center);
+
+    li {
+      width: 160px;
+      height: 35px;
+      padding: 3px;
+      color: $light_color;
+      font-size: 14px;
+      text-transform: uppercase;
+      @include flexbox(row, center, center);
+      -webkit-transition: -webkit-transform 0.3s ease-out;
+      -moz-transition: -moz-transform 0.3s ease-out;
+      -o-transition: -o-transform 0.3s ease-out;
+      -ms-transition: -ms-transform 0.3s ease-out;
+      transition: transform 0.3s ease-out;
+    }
+
+    li:hover {
+      -moz-transform: scale(1.01);
+      -webkit-transform: scale(1.01);
+      -o-transform: scale(1.01);
+      -ms-transform: scale(1.01);
+      transform: scale(1.01);
+      cursor: pointer;
+    }
+
+    li:first-child {
+      background-color: $background_color;
+      border-radius: 10px 0px 0px 10px;
+      -moz-border-radius: 10px 0px 0px 10px;
+      -webkit-border-radius: 10px 0px 0px 10px;
+      -webkit-box-shadow: 1px 0px 5px 0px $shadow_color;
+      -moz-box-shadow: 1px 0px 5px 0px $shadow_color;
+      box-shadow: 1px 0px 3px 0px $shadow_color;
+    }
+    li:nth-child(2) {
+      background-color: $light_color;
+      color: $dark_color;
+      -webkit-box-shadow: 1px 0px 5px 0px $shadow_color;
+      -moz-box-shadow: 1px 0px 5px 0px $shadow_color;
+      box-shadow: 1px 0px 3px 0px $shadow_color;
+    }
+
+    li:last-child {
+      background-color: $dark_color;
+      border-radius: 0px 10px 10px 0px;
+      -moz-border-radius: 0px 10px 10px 0px;
+      -webkit-border-radius: 0px 10px 10px 0px;
+      -webkit-box-shadow: 1px 0px 5px 0px $shadow_color;
+      -moz-box-shadow: 1px 0px 5px 0px $shadow_color;
+      box-shadow: 1px 0px 3px 0px $shadow_color;
+    }
+  }
+  .content-title {
+    width: 100%;
+    text-transform: capitalize;
+    @include flexbox(row, center, center);
+    font-size: 2rem;
+    font-weight: bolder;
+  }
+  .each-season {
+    width: 100%;
+    padding: 30px 25px 10px 25px;
+
+    .queens {
+      .content-subtitle {
+        width: 100%;
+        font-size: 1rem;
+        font-weight: bold;
+      }
+      li {
+        width: 50%;
+        padding: 30px;
+
+        .nombre {
+          text-align: center;
+        }
+      }
+
+      li:last-child {
+        display: none;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .content-background {
+    width: 80%;
+    padding-top: 20px;
+
+    .button-group {
+      width: 100%;
+      height: 50px;
+      @include flexbox(row, center, center);
+
+      li {
+        width: 150px;
+        height: 30px;
+        font-size: 12px;
+      }
+    }
+
+    .each-season {
+      width: 100%;
+      padding: 30px 25px 10px 25px;
+
+      ul {
+        li {
+          width: 50%;
+          padding: 30px;
+
+          .nombre {
+            text-align: center;
+          }
+        }
+
+        li:last-child {
+          display: none;
+        }
+      }
+    }
+  }
+}
