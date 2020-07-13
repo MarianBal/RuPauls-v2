@@ -1,11 +1,12 @@
 export const translations = {
   header: {
-    placeholder: 'Search for a queen or a season',
-    alt: 'RuPaul´s Drag Race logo'
+    placeholder: 'Search for a season',
+    alt: 'RuPaul´s Drag Race logo',
+    number: 'number'
   },
   content: {
     missCongeniality: 'miss congeniality',
-    allQueens: 'all queens',
-    winners: 'winners'
+    allQueensText: 'all queens',
+    winnersText: 'winners'
   }
 };

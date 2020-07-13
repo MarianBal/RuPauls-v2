@@ -11,3 +11,11 @@ const inOfficeApi = apiURLConstructor(baseUrl);
 export const getQueens = () => () => {
   return fetch(inOfficeApi(`${endpoints.allQueens}`), getSettings());
 };
+
+export const getCongeniality = () => () => {
+  return fetch(inOfficeApi(`${endpoints.congeniality}`), getSettings());
+};
+
+export const getWinners = () => () => {
+  return fetch(inOfficeApi(`${endpoints.winners}`), getSettings());
+};

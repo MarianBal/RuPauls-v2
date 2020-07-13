@@ -2,10 +2,10 @@ import React from 'react';
 
 import { classNames } from './../../constants/classnames';
 import { translations } from './../../constants/translations';
+import ButtonGroup from './../ButtonGroup';
 import './content.scss';
 const {
   contentBackground,
-  buttonGroup,
   eachSeason,
   contentTitle,
   queensContent,
@@ -13,22 +13,22 @@ const {
   queenImage,
   queenName
 } = classNames.content;
-const { missCongeniality, allQueens, winners } = translations.content;
+const { allQueens } = translations.content;
 
-const ContentView = ({ savedQueens }) => (
+const ContentView = ({ queens, setCongeniality, setAllQueens, setWinners }) => (
   <div>
     <div className={contentBackground}>
-      <ul className={buttonGroup}>
-        <li>{missCongeniality}</li>
-        <li>{allQueens}</li>
-        <li>{winners}</li>
-      </ul>
+      <ButtonGroup
+        setCongeniality={setCongeniality}
+        setAllQueens={setAllQueens}
+        setWinners={setWinners}
+      />
 
       <div className={eachSeason}>
         <div className={contentTitle}>{allQueens}</div>
 
         <div className={queensContent}>
-          {savedQueens.map(queen => (
+          {queens.map(queen => (
             <div className={eachQueen} key={queen.id}>
               <div className={queenImage}>
                 <img src={queen.image_url} alt={queen.name} />

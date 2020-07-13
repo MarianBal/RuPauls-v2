@@ -1,15 +1,36 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { connect } from 'react-redux';
 
 import ContentView from './ContentView';
 
-const ContentWrapper = ({ savedQueens }) => (
-  <ContentView savedQueens={savedQueens} />
-);
+const ContentWrapper = ({ savedQueens, congenialityQueens, winnersQueens }) => {
+  const [congeniality, setCongeniality] = useState(false);
+  const [allQueens, setAllQueens] = useState(true);
+  const [winners, setWinners] = useState(false);
 
-const mapStateToProps = ({ queens }) => {
+  return (
+    <ContentView
+      queens={
+        allQueens
+          ? savedQueens
+          : congeniality
+          ? congenialityQueens
+          : winners
+          ? winnersQueens
+          : savedQueens
+      }
+      setCongeniality={setCongeniality}
+      setAllQueens={setAllQueens}
+      setWinners={setWinners}
+    />
+  );
+};
+
+const mapStateToProps = ({ queens, congeniality, winners }) => {
   return {
-    savedQueens: queens
+    savedQueens: queens,
+    congenialityQueens: congeniality,
+    winnersQueens: winners
   };
 };
 

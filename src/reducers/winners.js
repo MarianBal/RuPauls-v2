@@ -1,12 +1,12 @@
 import { queensTypes } from './../constants/actionTypes/queens';
 
-const queensManagement = (state = [], action) => {
+const winnersManagement = (state = [], action) => {
   switch (action.type) {
-    case queensTypes.addQueens:
+    case queensTypes.addWinners:
       return [...state, ...action.data];
     default:
       return state;
   }
 };
 
-export default queensManagement;
+export default winnersManagement;

@@ -5,17 +5,17 @@ import MainappView from './MainappView';
 import { getQueens } from './helper';
 import { addAllQueens } from './../../actions';
 
-const MainappWrapper = ({ addSlotInManagement }) => {
+const MainappWrapper = ({ saveAllQueens }) => {
   useEffect(() => {
-    getQueens(addSlotInManagement);
-  }, [addSlotInManagement]);
+    getQueens(saveAllQueens);
+  }, [saveAllQueens]);
 
   return <MainappView />;
 };
 
 const mapDispatchToProps = dispatch => {
   return {
-    addSlotInManagement: data => dispatch(addAllQueens({ data }))
+    saveAllQueens: data => dispatch(addAllQueens({ data }))
   };
 };
 
