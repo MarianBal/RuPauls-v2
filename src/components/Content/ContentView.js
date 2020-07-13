@@ -13,7 +13,7 @@ const {
 } = classNames.content;
 const { missCongeniality, allQueens, winners } = translations.content;
 
-const ContentView = () => (
+const ContentView = ({ savedQueens }) => (
   <div>
     <div className={contentBackground}>
       <ul className={buttonGroup}>
@@ -26,7 +26,10 @@ const ContentView = () => (
         <div className={contentTitle}>{allQueens}</div>
 
         <div className={queens}>
-          <div className={contentSubtitle}>Season 01</div>
+          {savedQueens.map(queen => (
+            <h1>{queen.name}</h1>
+          ))}
+          {/* <div className={contentSubtitle}>Season 01</div> */}
         </div>
       </div>
     </div>
