@@ -8,8 +8,10 @@ const {
   buttonGroup,
   eachSeason,
   contentTitle,
-  contentSubtitle,
-  queens
+  queensContent,
+  eachQueen,
+  queenImage,
+  queenName
 } = classNames.content;
 const { missCongeniality, allQueens, winners } = translations.content;
 
@@ -25,11 +27,15 @@ const ContentView = ({ savedQueens }) => (
       <div className={eachSeason}>
         <div className={contentTitle}>{allQueens}</div>
 
-        <div className={queens}>
+        <div className={queensContent}>
           {savedQueens.map(queen => (
-            <h1>{queen.name}</h1>
+            <div className={eachQueen} key={queen.id}>
+              <div className={queenImage}>
+                <img src={queen.image_url} alt={queen.name} />
+              </div>
+              <p className={queenName}>{queen.name}</p>
+            </div>
           ))}
-          {/* <div className={contentSubtitle}>Season 01</div> */}
         </div>
       </div>
     </div>

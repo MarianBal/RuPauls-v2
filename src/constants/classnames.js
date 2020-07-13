@@ -11,6 +11,9 @@ export const classNames = {
     eachSeason: 'each-season',
     contentTitle: 'content-title',
     contentSubtitle: 'content-subtitle',
-    queens: 'queens'
+    queensContent: 'queens-content',
+    eachQueen: 'each-queen',
+    queenImage: 'queen-image',
+    queenName: 'queen-name'
   }
 };

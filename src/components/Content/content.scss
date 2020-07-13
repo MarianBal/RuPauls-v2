@@ -77,23 +77,95 @@
     width: 100%;
     padding: 30px 25px 10px 25px;
 
-    .queens {
-      .content-subtitle {
-        width: 100%;
-        font-size: 1rem;
-        font-weight: bold;
-      }
-      li {
-        width: 50%;
-        padding: 30px;
+    .queens-content {
+      width: 100%;
+      @include flexbox(row, flex-start, flex-start);
+      flex-wrap: wrap;
 
-        .nombre {
+      .each-queen {
+        width: 20%;
+        padding: 30px;
+        @include flexbox(column, space-between, center);
+
+        .queen-image {
+          height: 150px;
+          overflow: hidden;
+
+          img {
+            width: 100%;
+            cursor: pointer;
+            -webkit-transition: -webkit-transform 1s ease-out;
+            -moz-transition: -moz-transform 1s ease-out;
+            -o-transition: -o-transform 1s ease-out;
+            -ms-transition: -ms-transform 1s ease-out;
+            transition: transform 1s ease-out;
+          }
+
+          img:hover {
+            -moz-transform: scale(1.05);
+            -webkit-transform: scale(1.05);
+            -o-transform: scale(1.05);
+            -ms-transform: scale(1.05);
+            transform: scale(1.05);
+          }
+        }
+
+        .queenName {
           text-align: center;
         }
       }
 
-      li:last-child {
+      .each-queen:last-child {
         display: none;
+      }
+    }
+    ul {
+      width: 100%;
+      @include flexbox(row, flex-start, flex-start);
+      flex-wrap: wrap;
+
+      li {
+        width: 20%;
+        padding: 30px;
+        @include flexbox(column, space-between, center);
+
+        .img {
+          height: 150px;
+          overflow: hidden;
+
+          img {
+            width: 100%;
+            cursor: pointer;
+            -webkit-transition: -webkit-transform 1s ease-out;
+            -moz-transition: -moz-transform 1s ease-out;
+            -o-transition: -o-transform 1s ease-out;
+            -ms-transition: -ms-transform 1s ease-out;
+            transition: transform 1s ease-out;
+          }
+
+          img:hover {
+            -moz-transform: scale(1.05);
+            -webkit-transform: scale(1.05);
+            -o-transform: scale(1.05);
+            -ms-transform: scale(1.05);
+            transform: scale(1.05);
+          }
+        }
+        .nombre {
+          width: 100%;
+          font-size: 14px;
+          color: $dark_color;
+          margin-top: 10px;
+          text-transform: capitalize;
+          text-align: left;
+          transition: color 0.5s linear 0.1s font-weight 0.5s ease-out 0.1s;
+        }
+
+        .nombre:hover {
+          color: $background_color;
+          font-weight: bold;
+          cursor: pointer;
+        }
       }
     }
   }
