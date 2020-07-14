@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { connect } from 'react-redux';
 
 import ContentView from './ContentView';
+import { translations } from './../../constants/translations';
+const { allQueensText, missCongeniality, winnersText } = translations.content;
 
 const ContentWrapper = ({ savedQueens, congenialityQueens, winnersQueens }) => {
   const [congeniality, setCongeniality] = useState(false);
@@ -22,6 +24,15 @@ const ContentWrapper = ({ savedQueens, congenialityQueens, winnersQueens }) => {
       setCongeniality={setCongeniality}
       setAllQueens={setAllQueens}
       setWinners={setWinners}
+      titletext={
+        allQueens
+          ? allQueensText
+          : congeniality
+          ? missCongeniality
+          : winners
+          ? winnersText
+          : allQueensText
+      }
     />
   );
 };

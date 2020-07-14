@@ -1,7 +1,6 @@
 import React from 'react';
 
 import { classNames } from './../../constants/classnames';
-import { translations } from './../../constants/translations';
 import ButtonGroup from './../ButtonGroup';
 import './content.scss';
 const {
@@ -13,9 +12,14 @@ const {
   queenImage,
   queenName
 } = classNames.content;
-const { allQueens } = translations.content;
 
-const ContentView = ({ queens, setCongeniality, setAllQueens, setWinners }) => (
+const ContentView = ({
+  queens,
+  setCongeniality,
+  setAllQueens,
+  setWinners,
+  titletext
+}) => (
   <div>
     <div className={contentBackground}>
       <ButtonGroup
@@ -25,7 +29,7 @@ const ContentView = ({ queens, setCongeniality, setAllQueens, setWinners }) => (
       />
 
       <div className={eachSeason}>
-        <div className={contentTitle}>{allQueens}</div>
+        <div className={contentTitle}>{titletext}</div>
 
         <div className={queensContent}>
           {queens.map(queen => (
