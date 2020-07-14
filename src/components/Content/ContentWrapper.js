@@ -3,9 +3,20 @@ import { connect } from 'react-redux';
 
 import ContentView from './ContentView';
 import { translations } from './../../constants/translations';
-const { allQueensText, missCongeniality, winnersText } = translations.content;
+const {
+  allQueensText,
+  missCongeniality,
+  winnersText,
+  searchSeason
+} = translations.content;
 
-const ContentWrapper = ({ savedQueens, congenialityQueens, winnersQueens }) => {
+const ContentWrapper = ({
+  searchSeason,
+  savedQueens,
+  congenialityQueens,
+  winnersQueens,
+  seasonQueens
+}) => {
   const [congeniality, setCongeniality] = useState(false);
   const [allQueens, setAllQueens] = useState(true);
   const [winners, setWinners] = useState(false);
@@ -13,7 +24,9 @@ const ContentWrapper = ({ savedQueens, congenialityQueens, winnersQueens }) => {
   return (
     <ContentView
       queens={
-        allQueens
+        searchSeason
+          ? seasonQueens
+          : allQueens
           ? savedQueens
           : congeniality
           ? congenialityQueens
@@ -25,7 +38,9 @@ const ContentWrapper = ({ savedQueens, congenialityQueens, winnersQueens }) => {
       setAllQueens={setAllQueens}
       setWinners={setWinners}
       titletext={
-        allQueens
+        searchSeason
+          ? searchSeason
+          : allQueens
           ? allQueensText
           : congeniality
           ? missCongeniality
@@ -37,11 +52,12 @@ const ContentWrapper = ({ savedQueens, congenialityQueens, winnersQueens }) => {
   );
 };
 
-const mapStateToProps = ({ queens, congeniality, winners }) => {
+const mapStateToProps = ({ queens, congeniality, winners, season }) => {
   return {
     savedQueens: queens,
     congenialityQueens: congeniality,
-    winnersQueens: winners
+    winnersQueens: winners,
+    seasonQueens: season
   };
 };
 

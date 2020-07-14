@@ -7,6 +7,7 @@ export const translations = {
   content: {
     missCongeniality: 'miss congeniality',
     allQueensText: 'all queens',
-    winnersText: 'winners'
+    winnersText: 'winners',
+    searchSeason: 'You searched for a season'
   }
 };

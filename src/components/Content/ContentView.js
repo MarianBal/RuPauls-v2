@@ -34,9 +34,12 @@ const ContentView = ({
         <div className={queensContent}>
           {queens.map(queen => (
             <div className={eachQueen} key={queen.id}>
-              <div className={queenImage}>
-                <img src={queen.image_url} alt={queen.name} />
-              </div>
+              {queen.image_url && (
+                <div className={queenImage}>
+                  <img src={queen.image_url} alt={queen.name} />{' '}
+                </div>
+              )}
+
               <p className={queenName}>{queen.name}</p>
             </div>
           ))}

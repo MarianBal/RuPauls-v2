@@ -19,3 +19,7 @@ export const getCongeniality = () => () => {
 export const getWinners = () => () => {
   return fetch(inOfficeApi(`${endpoints.winners}`), getSettings());
 };
+
+export const getSeason = season => () => {
+  return fetch(inOfficeApi(`${endpoints.season}${season}`), getSettings());
+};

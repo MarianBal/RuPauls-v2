@@ -14,3 +14,8 @@ export const addAllWinners = ({ data }) => ({
   type: queensTypes.addWinners,
   data
 });
+
+export const addOneSeason = ({ data }) => ({
+  type: queensTypes.addSeason,
+  data
+});

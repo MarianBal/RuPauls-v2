@@ -7,9 +7,14 @@ import rupaul from '../../img/rupaul.png';
 import './header.scss';
 const { placeholder, alt, number } = translations.header;
 
-const HeaderView = () => (
+const HeaderView = ({ handleFilter, handleValue }) => (
   <nav>
-    <input type={number} placeholder={placeholder} />
+    <input
+      type={number}
+      placeholder={placeholder}
+      onKeyPress={handleFilter}
+      onChange={handleValue}
+    />
     <div className={classNames.header.logo}>
       <img src={rupaul} alt={alt} />
     </div>
