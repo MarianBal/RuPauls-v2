@@ -21,3 +21,7 @@ export const getWinners = () => () => {
 export const getSeason = season => () => {
   return fetch(ruApi(`${endpoints.season}${season}`), getSettings());
 };
+
+export const getSingleQueen = id => () => {
+  return fetch(ruApi(`${endpoints.singleQueen}${id}`), getSettings());
+};

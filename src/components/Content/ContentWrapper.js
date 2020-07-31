@@ -3,6 +3,9 @@ import { connect } from 'react-redux';
 
 import ContentView from './ContentView';
 import { translations } from './../../constants/translations';
+import { addOneQueen } from '../../actions';
+import { getSingleQueen } from './helper';
+
 const {
   allQueensText,
   missCongeniality,
@@ -15,7 +18,8 @@ const ContentWrapper = ({
   savedQueens,
   congenialityQueens,
   winnersQueens,
-  seasonQueens
+  seasonQueens,
+  saveSingleQueen
 }) => {
   const [congeniality, setCongeniality] = useState(false);
   const [allQueens, setAllQueens] = useState(true);
@@ -48,6 +52,7 @@ const ContentWrapper = ({
           ? winnersText
           : allQueensText
       }
+      getSingleQueen={getSingleQueen(saveSingleQueen)}
     />
   );
 };
@@ -61,4 +66,10 @@ const mapStateToProps = ({ queens, congeniality, winners, season }) => {
   };
 };
 
-export default connect(mapStateToProps)(ContentWrapper);
+const mapDispatchToProps = dispatch => {
+  return {
+    saveSingleQueen: data => dispatch(addOneQueen({ data }))
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(ContentWrapper);

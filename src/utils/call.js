@@ -1,4 +1,10 @@
-import { getQueens, getCongeniality, getWinners, getSeason } from './api';
+import {
+  getQueens,
+  getCongeniality,
+  getWinners,
+  getSeason,
+  getSingleQueen
+} from './api';
 import { caller } from './caller';
 
 export const getAllQueens = async () => {
@@ -18,5 +24,10 @@ export const getAllWinners = async () => {
 
 export const getOneSeason = async data => {
   const response = await caller(getSeason(data));
+  return response;
+};
+
+export const getOneQueen = async data => {
+  const response = await caller(getSingleQueen(data));
   return response;
 };

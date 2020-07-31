@@ -2,6 +2,7 @@ import React from 'react';
 
 import { classNames } from './../../constants/classnames';
 import ButtonGroup from './../ButtonGroup';
+//import Modal from './../Modal';
 import './content.scss';
 const {
   contentBackground,
@@ -18,7 +19,8 @@ const ContentView = ({
   setCongeniality,
   setAllQueens,
   setWinners,
-  titletext
+  titletext,
+  getSingleQueen
 }) => (
   <div>
     <div className={contentBackground}>
@@ -33,7 +35,11 @@ const ContentView = ({
 
         <div className={queensContent}>
           {queens.map(queen => (
-            <div className={eachQueen} key={queen.id}>
+            <div
+              className={eachQueen}
+              key={queen.id}
+              onClick={() => getSingleQueen(queen.id)}
+            >
               {queen.image_url && (
                 <div className={queenImage}>
                   <img src={queen.image_url} alt={queen.name} />
