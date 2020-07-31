@@ -7,7 +7,7 @@ const {
   allQueensText,
   missCongeniality,
   winnersText,
-  searchSeason
+  searchSeasonText
 } = translations.content;
 
 const ContentWrapper = ({
@@ -39,7 +39,7 @@ const ContentWrapper = ({
       setWinners={setWinners}
       titletext={
         searchSeason
-          ? searchSeason
+          ? searchSeasonText
           : allQueens
           ? allQueensText
           : congeniality

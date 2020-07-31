@@ -36,7 +36,7 @@ const ContentView = ({
             <div className={eachQueen} key={queen.id}>
               {queen.image_url && (
                 <div className={queenImage}>
-                  <img src={queen.image_url} alt={queen.name} />{' '}
+                  <img src={queen.image_url} alt={queen.name} />
                 </div>
               )}
 

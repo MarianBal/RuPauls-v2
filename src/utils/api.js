@@ -3,23 +3,21 @@ import { endpoints, url } from './../constants/enums/url';
 
 const apiURLConstructor = baseURL => extension => baseURL + extension;
 let baseUrl = url; //DEFAULT URL IS DEVELOPMENT
-if (window._CONFIG_) {
-  baseUrl = window._CONFIG_.API_URL;
-}
-const inOfficeApi = apiURLConstructor(baseUrl);
+
+const ruApi = apiURLConstructor(baseUrl);
 
 export const getQueens = () => () => {
-  return fetch(inOfficeApi(`${endpoints.allQueens}`), getSettings());
+  return fetch(ruApi(`${endpoints.allQueens}`), getSettings());
 };
 
 export const getCongeniality = () => () => {
-  return fetch(inOfficeApi(`${endpoints.congeniality}`), getSettings());
+  return fetch(ruApi(`${endpoints.congeniality}`), getSettings());
 };
 
 export const getWinners = () => () => {
-  return fetch(inOfficeApi(`${endpoints.winners}`), getSettings());
+  return fetch(ruApi(`${endpoints.winners}`), getSettings());
 };
 
 export const getSeason = season => () => {
-  return fetch(inOfficeApi(`${endpoints.season}${season}`), getSettings());
+  return fetch(ruApi(`${endpoints.season}${season}`), getSettings());
 };

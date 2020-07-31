@@ -8,6 +8,6 @@ export const translations = {
     missCongeniality: 'miss congeniality',
     allQueensText: 'all queens',
     winnersText: 'winners',
-    searchSeason: 'You searched for a season'
+    searchSeasonText: 'You searched for a season'
   }
 };
