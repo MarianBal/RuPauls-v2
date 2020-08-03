@@ -19,8 +19,3 @@ export const addOneSeason = ({ data }) => ({
   type: queensTypes.addSeason,
   data
 });
-
-export const addOneQueen = ({ data }) => ({
-  type: queensTypes.singleQueen,
-  data
-});

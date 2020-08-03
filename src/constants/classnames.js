@@ -15,5 +15,15 @@ export const classNames = {
     eachQueen: 'each-queen',
     queenImage: 'queen-image',
     queenName: 'queen-name'
+  },
+  modal: {
+    modalBackground: 'modal-background',
+    modalContainer: 'modal-container',
+    modalPic: 'modal-pic',
+    close: 'close',
+    imageContainer: 'image-container',
+    dataContainer: 'data-container',
+    seasonContainer: 'season-container',
+    lipsyncsContainer: 'lipsyncs-container'
   }
 };

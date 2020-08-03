@@ -19,14 +19,68 @@
     background-color: $light_color;
     margin: 40px auto;
     opacity: 1;
-    //font-family: $principal_font;
-    //color: $font_color;
-    @include flexbox(row, flex-start, center) .modal-img {
+    border-radius: 10px;
+    @include flexbox(row, flex-start, center);
+
+    .close {
+      width: 40px;
+      height: 40px;
+      @include flexbox(row, center, center);
+      position: absolute;
+      top: 0;
+      right: 0;
+      cursor: pointer;
+    }
+
+    .image-container {
+      width: 354px;
+      height: 470px;
+      border-radius: 10px;
+      margin: 0 15px;
+      overflow: hidden;
+
+      .modal-pic {
+        height: 100%;
+        width: 100%;
+        position: relative;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: 50% 0%;
+      }
+    }
+    .data-container {
       height: 100%;
-      position: relative;
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: 50% 50%;
+      padding: 30px 15px 0 0;
+
+      p:nth-child(2) {
+        font-style: italic;
+        font-size: 14px;
+      }
+
+      p:nth-child(3) {
+        font-weight: bold;
+        font-size: 1em;
+        margin-top: 30px;
+      }
+
+      p:nth-child(4) {
+        font-weight: bold;
+        font-size: 1em;
+      }
+
+      h1 {
+        font-family: 'Sriracha', cursive;
+        font-size: 2em;
+      }
+
+      .season-container {
+        margin-top: 30px;
+        font-size: 14px;
+      }
+      .lipsyncs-container {
+        margin-top: 30px;
+        font-size: 14px;
+      }
     }
   }
 }

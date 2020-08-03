@@ -9,5 +9,12 @@ export const translations = {
     allQueensText: 'all queens',
     winnersText: 'winners',
     searchSeasonText: 'You searched for a season'
+  },
+  modal: {
+    winner: 'Winner!',
+    missCongeniality: 'Miss Congeniality :)',
+    seasons: 'Season: ',
+    place: ', place ',
+    lipsyncText: 'Lipsync: '
   }
 };
